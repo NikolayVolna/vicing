@@ -1,0 +1,257 @@
+:root {
+    --white: #ffffff;
+    --white-100: #e5e5e5;
+    --black: #0e0e0e;
+    --blue-100: #85ccdc;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--black);
+    color: var(--white)
+}
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img {
+    max-width: 100%;
+}
+
+.title-2 {
+    text-align: center;
+    font-size: 36px;
+    line-height: 1.16;
+}
+
+.bg-img {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 10;
+    transition: all .4s;
+    top: -200%;
+}
+
+.popup.is-active {
+    top: 0;
+}
+
+.popup__body {
+    width: 50vh;
+    height: 40vh;
+    padding: 20px;
+    border-radius: 14px;
+    background-color: #fff;
+}
+
+.popup__body__iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    padding-top: 50px;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.header__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__point:not(:last-child) {
+    margin-right: 25px;
+}
+
+.header__link {
+    text-decoration: none;
+    font-size: 36px;
+    line-height: 1.16;
+    color: var(--white);
+    position: relative;
+    padding-bottom: 4px;
+    overflow: hidden;
+}
+
+.header__link::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    transform: all .4s;
+    height: 2px;
+    background-color: var(--blue-100);
+}
+
+.header__link:hover,
+.header__link.is-active {
+    color: var(--blue-100);
+}
+
+.header__link:hover::before,
+.header__link.is-active::before {
+    width: 100%;
+}
+
+.hero {
+    background-image: url(./img/2950659.jpg);
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    padding-top: center center;
+}
+
+.hero__block {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.abaut {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.abaut__block {
+    display: grid;
+    grid-template-columns: 206px 1fr;
+    gap: 100px 219px;
+}
+
+.abaut__title {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.abaut__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.abaut__item:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+.abaut__item__text,
+.abaut__block-text__text {
+    font-size: 18px;
+    color: var(--white-100);
+}
+
+.abaut__item__text {
+    margin: 6px;
+}
+
+.abaut__block-text__text {
+    margin-top: 0;
+}
+
+.abaut__block-text__text:last-child {
+    margin-bottom: 0;
+}
+
+.video {
+    background-image: url(./img/thumb-1920-691823.jpg);
+    height: 100vh;
+}
+
+.secon {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.secon__title {
+    text-align: center;
+}
+
+.secon__block {
+    display: grid;
+    margin-top: 172px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 75px;
+}
+
+.secon__block__item {
+    position: relative;
+    cursor: pointer;
+}
+
+.secon__block__item::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(14, 14, 14, .8);
+    z-index: 2;
+    transition: all .4s;
+    opacity: 0;
+}
+
+.secon__block__item__number {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: bold;
+    font-size: 96px;
+    line-height: 112px;
+    color: #600e09;
+    transform: translateY(-73px);
+}
+
+.secon__block__item__img {
+    position: relative;
+    z-index: 1;
+}
+
+.secon__block__item__btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 12px 60px;
+    background: #0e0e0e;
+    border: none;
+    color: #fff;
+    z-index: 2;
+    cursor: pointer;
+    opacity: 0;
+    transition: all .4s;
+}
+
+.secon__block__item:hover::before {
+    opacity: 1;
+}
+
+.secon__block__item:hover .secon__block__item__btn {
+    opacity: 1;
+}
